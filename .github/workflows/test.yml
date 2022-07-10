@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    name: pushed
+    steps:
+      - name: Hello world action step
+        uses: marukaz/notify@v1
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "hello"
